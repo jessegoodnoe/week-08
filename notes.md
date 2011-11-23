@@ -1,3 +1,14 @@
+Useful info
+===========
+
+Handy link: [Closure explanations](http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/)
+
+Book: Exceptional Ruby by Avdi Grimm (PDF)
+
+Handy sqllite database viewer: [Base](http://itunes.apple.com/us/app/base/id402383384?mt=12)
+
+Run rails console in sandbox mode so it rolls back all of your DB changes: rails console --sandbox
+
 Exception Handling
 ==================
 
@@ -10,12 +21,14 @@ Risky code:
 	end
 
 This code is more robust:
+/
+[1,2,3,nil].compact do |number|
+	puts number.to_i + i
+end
+
 - compacting gets rid of array
 - to_i makes sure you're adding to an integer
 
-	[1,2,3,nil].compact do |number|
-		puts number.to_i + i
-	end
 
 Handling the exceptions:
 
@@ -89,8 +102,3 @@ If one or more methods are handling similar exceptions around different function
 	end
 	#or
 	safe_connection { RemoveConnection.info :username => "Frank" }
-	
-
-Handy link: [Closure explanations](http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/)
-
-Book: Exceptional Ruby by Avdi Grimm (PDF)
