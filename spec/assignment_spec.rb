@@ -36,7 +36,7 @@ describe Assignment do
       #
       # @see http://guides.rubyonrails.org/active_record_validations_callbacks.html#valid-and-invali
       #
-      it "should not be a valid" do
+      it "should not be valid" do
         
         subject.should_not be_valid
         

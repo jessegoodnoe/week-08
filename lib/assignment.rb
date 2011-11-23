@@ -1,5 +1,7 @@
 class Assignment < ActiveRecord::Base
     
+    validates_presence_of :user
+    
     #
     # This completes the relationship between User and Assigment. Here we are saying:
     # 
