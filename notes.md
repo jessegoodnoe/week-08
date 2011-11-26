@@ -1,18 +1,20 @@
 Useful info
 ===========
 
-Handy link: [Closure explanations](http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/)
+[Closure explanations](http://www.skorks.com/2010/05/closures-a-simple-explanation-using-ruby/)
 
 Book: Exceptional Ruby by Avdi Grimm (PDF)
 
 Handy sqllite database viewer: [Base](http://itunes.apple.com/us/app/base/id402383384?mt=12)
 
-Run rails console in sandbox mode so it rolls back all of your DB changes: rails console --sandbox
+Run rails console in sandbox mode so it rolls back all of your DB changes: `rails console --sandbox`
 
 Exception Handling
 ==================
 
-Don't handle them. Make it so you won't need to deal with them.
+Don't handle them 
+------------------
+Make it so you won't need to deal with them.
 
 Risky code:
 
@@ -21,15 +23,17 @@ Risky code:
 	end
 
 This code is more robust:
-/
-[1,2,3,nil].compact do |number|
-	puts number.to_i + i
-end
+
+	[1,2,3,nil].compact do |number|
+		puts number.to_i + i
+	end
 
 - compacting gets rid of array
 - to_i makes sure you're adding to an integer
 
 
+Handling
+--------
 Handling the exceptions:
 
 	begin
@@ -40,6 +44,8 @@ Handling the exceptions:
 		warn "Error: Something bad happened: #{exception}"
 	end
 	
+Chaining
+--------
 Can chain exception rescuing like this:
 
 	begin
@@ -71,6 +77,8 @@ Can also have an else for rescues:
 		end
 	end
 
+Method Handling
+---------------
 Alternative way to handle method wide exceptions, don't use the begin, instead hang the recuse, else, ensure, end off the method:
 
 	def method_name
@@ -85,6 +93,8 @@ Alternative way to handle method wide exceptions, don't use the begin, instead h
 		variable #still accessible down here
 	end
 	
+Using blocks
+------------
 If one or more methods are handling similar exceptions around different functionality, can make more generic error handling using a block:
 
 	# Call this with a block.
